@@ -35,17 +35,11 @@ end
 
 # Prase (Expand) FEN row string, for example '2R3pr' gives '--R---pr'
 def parse_fen_row(row_str)
-  pp "BEGIN"
-  pp row_str  
   rs = row_str.split('')
-  pp rs  
   rs = rs.map { |x| parse_fen_character(x) }
-  pp rs
   return nil if rs.include?(nil)
   rs = rs.join('')
   return nil unless rs.size == 8
-  pp rs
-  pp "END"
   return rs
 end
 
