@@ -1,0 +1,154 @@
+/*
+ * KingFEN
+ * File:  index.css
+ * Used with Eric Meyer's css reset: ./reset.css 
+ */
+
+body.view, body.edit, body.about
+{
+  background-color: #024E68;
+}
+
+#main
+{
+  display:          inline-block;
+  border:           4px solid grey;
+  margin:           0 auto;
+  padding:          3px;
+  background-color: #F0F0F0;
+}
+
+table.main_table {
+  background-color: #F0F0F0;
+}
+
+td.main_cell {
+  margin:           1px;
+  border:           1px solid #AAA;
+  padding:          2px;
+}
+
+table.main_board
+{
+  width:    100%;
+}
+
+table.main_board td
+{
+  width:    56px;
+  height:   56px;
+}
+
+td.control_cell
+{
+  line-height:     125%;
+  width:           500px;
+  vertical-align:  middle;
+  margin-left:     5px;
+}
+
+.main_title
+{
+  text-align:      center;
+  font-size:       175%;
+  font-weight:     bold;
+  margin-top:      6px;
+  margin-bottom:   6px;
+  font-family:     "Verdana";
+}
+
+.help
+{
+  text-align:      center;
+}
+
+td img
+{
+  display:         inline;
+}
+
+table.w_at_bot_bd
+{
+  border-style:   solid;
+  border-width:   3px;
+  border-color:   #222 grey white grey;
+}
+
+table.b_at_bot_bd
+{
+  border-style:   solid;
+  border-width:   3px;
+  border-color:   white grey black grey;
+}
+
+td.w_sqr
+{
+  background-color: #C6A68C;
+}
+
+td.b_sqr
+{
+  background-color: #A5866B;
+}
+
+div.board_edge
+{
+  width:          454px;
+  border:         2px solid black;
+}
+
+table.shortcut_board
+{
+  width:          100%;
+  text-align:     center;
+  border:         3px solid grey;
+}
+
+tr.shortcut_key_row > td
+{
+  text-align:     center;
+  vertical-align: middle;
+}
+
+span.shortcut_key
+{
+  border:          1px solid black;
+  padding:         0px 3px 0px;
+  margin:          1px;
+  color:           black;
+  font-weight:     bold;
+  font-family:     "Lucida Console", Monaco, monospace
+}
+
+td.selected
+{
+  background-color: yellow;
+}
+
+input[type="button"] {
+  vertical-align:         middle;
+  /*
+  -moz-border-radius:     1px;
+  -webkit-border-radius:  1px;
+  -o-border-radius:       1px;
+  border-radius:          1px;
+  */
+}
+
+input.button_wide {
+  width:  100px;
+}
+
+div.fen_value {
+  margin-left:    5px;
+  vertical-align: middle;
+}
+
+input.fen_value {
+  margin-top:     4px;
+  margin-bottom:  4px;
+  font-size:      11px;
+  font-family:    "Lucida Console", Monaco, monospace
+}
+
+

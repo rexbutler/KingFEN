@@ -1,0 +1,36 @@
+<div id="main">
+
+  <div id="comments_top">
+    <% ct = @display_info[:comment_top] %>
+    <%= RedCloth.new(ct).to_html %>
+  </div>
+
+  <div class="board_edge" style="margin-left: auto; margin-right: auto;">
+
+  <table id="main_board" class="main_board w_at_bot_bd" cellspacing="0">
+    <% 7.downto(0).each do |i| %>
+      <tr id="r<%= i.to_s %>">
+      <% (0..7).each do |j| %>
+        <% sqr_id = "sqr_" + i.to_s + "_" + j.to_s %>
+        <% sqr_class = (i + j) % 2 == 0 ? "w_sqr" : "b_sqr" %>
+        <td id="<%= sqr_id %>" class="<%= sqr_class %>">
+          <% piece_img_path = @display_info[:piece_image_paths][i][j] %>
+          <% unless piece_img_path.empty? %>
+            <img src="<%= piece_img_path %>">
+          <% else %>
+            <%# &nbsp; %>
+          <% end %>
+      	</td>
+      <% end %>
+      </tr>
+    <% end %>
+  </table>
+
+  </div>
+
+  <div id="comments_bottom">
+    <% cb = @display_info[:comment_bottom] %>
+    <%= RedCloth.new(cb).to_html %>
+  </div>
+</div>
+
