@@ -88,6 +88,10 @@ def self.get_or_post(url,&block)
   post(url,&block)
 end
 
+get_or_post '/' do
+  redirect './about.html' #For now
+end
+
 get_or_post '/view' do
   fen_string = params.include?("fen_string") ? params["fen_string"] : DEFAULT_FEN_STRING
   piece_image_set = params.include?("piece_image_set") ? params["piece_image_set"] : DEFAULT_PIECE_IMAGE_SET
