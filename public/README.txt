@@ -8,11 +8,15 @@ It accepts the following parameters:
                         alpha (default)
                         merida
                         uscf
-  comment_top:        The comment to display above the board.  Text or textile format.
-  comment_bottom:     The comment to display bellow the board.  Text or textile format.                      
-                          
+  comment_top:        The comment to display above the board.
+  comment_bottom:     The comment to display bellow the board.
+                      [TO DO:  Fix CSS after reset for Textile support.]
+
+  piece_size:         The pixel size of each piece/square
+                      The supported sizes are 20 through 64 in increments of 4 along
+                      with 74, 80, 88, 96, 112, 128, 144, and 300
+                      
   FUTURE SUPPORT(?):
-  piece_size:         The pixel size of each piece/square [PRIORITY]
 
   board_color_scheme: The name of the board color scheme to use, one of:
                         brown (default)
@@ -25,3 +29,5 @@ It accepts the following parameters:
                       
 There is an 'about' page at '[base]/about.html'.
 
+
+* In addition, there is a HTML mockup of a FEN editor javascript app at '[base]/edit.html'

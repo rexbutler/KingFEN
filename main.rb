@@ -15,6 +15,8 @@ TRANS_TO_FILENAME = { "-" => "",
                       "r" => "br.png", "q" => "bq.png", "k" => "bk.png"  }
 FEN_PIECE_CODES = TRANS_TO_FILENAME.keys
 
+VALID_PIECE_IMAGE_SIZES = [20,24,28,32,36,40,44,48,52,56,60,64,72,80,88,96,112,128,144,300]
+
 DEFAULT_FEN_STRING = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 DEFAULT_PIECE_IMAGE_SIZE = 56 #Only size currently supported
 DEFAULT_PIECE_IMAGE_SET = 'uscf' #US CHESS FEDERATION PIECE IMAGES
@@ -93,21 +95,31 @@ get_or_post '/' do
 end
 
 get_or_post '/view' do
+  #Handle default values
   fen_string = params.include?("fen_string") ? params["fen_string"] : DEFAULT_FEN_STRING
   piece_image_set = params.include?("piece_image_set") ? params["piece_image_set"] : DEFAULT_PIECE_IMAGE_SET
-  #piece_image_size = params.include?("piece_image_size") ? params["piece_image_size"] : DEFAULT_PIECE_IMAGE_SIZE
-  piece_image_size = DEFAULT_PIECE_IMAGE_SIZE
-  
+  piece_image_size = params.include?("piece_image_size") ? params["piece_image_size"] : DEFAULT_PIECE_IMAGE_SIZE
+
   comment_top    = params.include?("comment_top") ? params["comment_top"] : DEFAULT_COMMENT_TOP
   comment_bottom = params.include?("comment_bottom") ? params["comment_bottom"] : DEFAULT_COMMENT_BOTTOM
   
+  #Find closest valid piece size, rounding down
+  piece_image_size = DEFAULT_PIECE_IMAGE_SIZE if piece_image_size.to_i.nil?
+  
+  a = VALID_PIECE_IMAGE_SIZES.reject{ |s| s > piece_image_size.to_i }
+  if a.size > 0 then
+    piece_image_size = a.max
+  else
+    piece_image_size = VALID_PIECE_IMAGE_SIZES[0]
+  end
+
   chess_position = parse_fen_string(fen_string)
 
   if chess_position.nil?
     erb :error_response #inline
   else    
     @display_info = {}
-    @display_info[:piece_size] = piece_image_size
+    @display_info[:piece_image_size] = piece_image_size
     @display_info[:piece_image_set] = piece_image_set
     @display_info[:piece_image_paths] = position_image_paths(chess_position,piece_image_size,piece_image_set)
     

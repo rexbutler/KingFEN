@@ -1,19 +1,26 @@
 <div id="main">
+  <script type="text/javascript" src="./javascripts/view.js"></script>
 
   <div id="comments_top">
     <% ct = @display_info[:comment_top] %>
     <%= RedCloth.new(ct).to_html %>
   </div>
 
-  <div class="board_edge" style="margin-left: auto; margin-right: auto;">
+  <div class="board_edge">
 
-  <table id="main_board" class="main_board w_at_bot_bd" cellspacing="0">
+  <% main_board_style = "width: " + (@display_info[:piece_image_size]*8).to_s + "px; " %>
+  <% main_board_style += "height: " + (@display_info[:piece_image_size]*8).to_s + "px;" %>
+
+  <table id="main_board" class="main_board w_at_bot_bd" cellspacing="0"
+         style="<%= main_board_style %>">
     <% 7.downto(0).each do |i| %>
       <tr id="r<%= i.to_s %>">
       <% (0..7).each do |j| %>
         <% sqr_id = "sqr_" + i.to_s + "_" + j.to_s %>
         <% sqr_class = (i + j) % 2 == 0 ? "w_sqr" : "b_sqr" %>
-        <td id="<%= sqr_id %>" class="<%= sqr_class %>">
+        <% sqr_style = "width: " + @display_info[:piece_image_size].to_s + "px; " %>
+        <% sqr_style += "height: " + @display_info[:piece_image_size].to_s + "px;" %>
+        <td id="<%= sqr_id %>" class="<%= sqr_class %>" style="<%= sqr_style %>">
           <% piece_img_path = @display_info[:piece_image_paths][i][j] %>
           <% unless piece_img_path.empty? %>
             <img src="<%= piece_img_path %>">

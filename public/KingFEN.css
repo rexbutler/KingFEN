@@ -33,7 +33,52 @@ table.main_board
   width:    100%;
 }
 
-table.main_board td
+div.board_edge
+{
+  border:         2px solid black;
+}
+
+table.w_at_bot_bd
+{
+  border-style:   solid;
+  border-width:   3px;
+  border-color:   #222 grey white grey;
+}
+
+table.b_at_bot_bd
+{
+  border-style:   solid;
+  border-width:   3px;
+  border-color:   white grey #222 grey;
+}
+
+td.w_sqr
+{
+  background-color: #C6A68C;
+}
+
+td.b_sqr
+{
+  background-color: #A5866B;
+}
+
+td img
+{
+  display:         inline;
+}
+
+/*
+*table.main_board td
+*{
+*  width:    56px;
+*  height:   56px;
+*}
+*/
+
+
+/* CSS for edit.html mockup here */
+
+table.edit_board td
 {
   width:    56px;
   height:   56px;
@@ -42,7 +87,6 @@ table.main_board td
 td.control_cell
 {
   line-height:     125%;
-  width:           500px;
   vertical-align:  middle;
   margin-left:     5px;
 }
@@ -60,41 +104,6 @@ td.control_cell
 .help
 {
   text-align:      center;
-}
-
-td img
-{
-  display:         inline;
-}
-
-table.w_at_bot_bd
-{
-  border-style:   solid;
-  border-width:   3px;
-  border-color:   #222 grey white grey;
-}
-
-table.b_at_bot_bd
-{
-  border-style:   solid;
-  border-width:   3px;
-  border-color:   white grey black grey;
-}
-
-td.w_sqr
-{
-  background-color: #C6A68C;
-}
-
-td.b_sqr
-{
-  background-color: #A5866B;
-}
-
-div.board_edge
-{
-  width:          454px;
-  border:         2px solid black;
 }
 
 table.shortcut_board
