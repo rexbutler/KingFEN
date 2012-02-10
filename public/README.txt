@@ -1,8 +1,13 @@
 KingFEN 0.01 README
 
-KingFEN accepts both 'GET' and 'POST' requests at '[base]/view'.
+KingFEN is a small web application which displays chess positions described
+using the FEN standard.
 
-It accepts the following parameters:
+FUNCIONALITY
+
+KingFEN accepts both 'GET' and 'POST' requests at '[base]/view' with
+the following parameters:
+
   fen_string:         The FEN string of the chess position to display
   piece_image_set:    The piece image collection to use, one of:
                         alpha (default)
@@ -22,12 +27,12 @@ It accepts the following parameters:
                         brown (default)
                         aqua
 
-  white_sqr_color:    A valid hex code for the background color of a white square.
+  white_sqr_color:    A hex code for the background color of a white square.
                       * Overrides board_color_scheme
-  black_sqr_color:    A valid hex code for the background color of a white square.
+  black_sqr_color:    A hex code for the background color of a white square.
                       * Overrides board_color_scheme
                       
-There is an 'about' page at '[base]/about.html'.
 
-
-* In addition, there is a HTML mockup of a FEN editor javascript app at '[base]/edit.html'
+Also:
+* There is an about/test page at '[base]/about.html'.
+* There is a HTML mockup of a FEN editor application at '[base]/edit.html'
