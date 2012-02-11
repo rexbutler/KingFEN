@@ -1,15 +1,20 @@
 <div id="main">
   <script type="text/javascript" src="./javascripts/view.js"></script>
 
-  <div id="comments_top">
+  <div id="comment_top">
     <% ct = @display_info[:comment_top] %>
     <%= RedCloth.new(ct).to_html %>
   </div>
 
-  <div class="board_edge">
+  <% board_size = @display_info[:piece_image_size]*8 %>
 
-  <% main_board_style = "width: " + (@display_info[:piece_image_size]*8).to_s + "px; " %>
-  <% main_board_style += "height: " + (@display_info[:piece_image_size]*8).to_s + "px;" %>
+  <% main_board_style  = "width:  " + board_size.to_s + "px; " %>
+  <% main_board_style += "height: " + board_size.to_s + "px; " %>
+
+  <% board_edge_style  = "width:  " + (board_size + 3*2).to_s + "px; " %>
+  <% board_edge_style += "height: " + (board_size + 3*2).to_s + "px; " %>
+
+  <div class="board_edge" style="<%= board_edge_style %>">
 
   <table id="main_board" class="main_board w_at_bot_bd" cellspacing="0"
          style="<%= main_board_style %>">
@@ -35,7 +40,7 @@
 
   </div>
 
-  <div id="comments_bottom">
+  <div id="comment_bottom">
     <% cb = @display_info[:comment_bottom] %>
     <%= RedCloth.new(cb).to_html %>
   </div>
