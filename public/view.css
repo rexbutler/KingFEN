@@ -12,14 +12,23 @@ body.view, body.about
   background-color: #F0F0F0;
 }
 
-table.main_board
-{
-  width:    100%;
-}
-
 div.board_edge
 {
   border:         2px solid black;
+}
+
+table.main_board
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.main_board, tr.main_board, td.main_board
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 }
 
 table.w_at_bot_bd
@@ -36,6 +45,11 @@ table.b_at_bot_bd
   border-color:   white grey #222 grey;
 }
 
+td.main_board img
+{
+  display:        inline;
+}
+
 td.w_sqr
 {
   background-color: #C6A68C;
@@ -44,10 +58,5 @@ td.w_sqr
 td.b_sqr
 {
   background-color: #A5866B;
-}
-
-td img
-{
-  display:         inline;
 }
 

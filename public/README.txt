@@ -15,7 +15,6 @@ the following parameters:
                         uscf
   comment_top:        The comment to display above the board.
   comment_bottom:     The comment to display bellow the board.
-                      [TO DO:  Fix CSS after reset for Textile support.]
 
   piece_size:         The pixel size of each piece/square
                       The supported sizes are 20 through 64 in increments of 4 along
