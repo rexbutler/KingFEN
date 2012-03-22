@@ -5,7 +5,7 @@
   <title>KingFEN 0.01 About</title>
 
   <link rel="shortcut icon" href="./KingFEN.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./reset.css" type="text/css">
+  <link rel="stylesheet" href="./normalize.css" type="text/css">
   <link rel="stylesheet" href="./view.css" type="text/css">
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -14,13 +14,11 @@
 
 <body class="view">
 
-  <div id="main" style="width: 1000px;">
+  <div id="main" style="width: 800px;">
   
     <h1 class="main_title">
       KingFEN: About
     </h1>
-
-    <br>
     KingFEN displays FEN strings, which describe chess positions.
     A FEN string gives a complete snapshot of a chess game in progress.
     <a href="http://www.chessgames.com/fenhelp.html">FEN</a>
@@ -28,9 +26,9 @@
     A description of the FEN standard can be found 
     <a href="http://chessprogramming.wikispaces.com/Forsyth-Edwards+Notation">here</a>.<br>
     <br>
+
     For more information on KingFEN, see the <a href="./README.txt">README</a>.<br>
 
-    <br>
     <br>
     
     <form name="ex_form" action="./view" method="get" target="_blank">
@@ -48,7 +46,7 @@
           FEN String:
         </td>
         <td>
-          <input id="fen_string" name="fen_string" size="70"
+          <input id="fen_string" name="fen_string" size="50"
                  value="r1b1kb1r/p1qn1pp1/2N1pn1p/2p5/1P6/3B4/P1P1QPPP/R1B1K1NR w - - 0 1"><br>
         </td>
       </tr>
@@ -57,7 +55,7 @@
           Comment (Top):        
         </td>
         <td>
-          <textarea id="comment_top" name="comment_top" rows="2" cols="60">Puzzle of the Day</textarea>
+          <textarea id="comment_top" name="comment_top" rows="2" cols="50">Puzzle of the Day</textarea>
         </td>
       </tr>
       <tr>
@@ -66,7 +64,7 @@
           &nbsp;&nbsp;    
         </td>
         <td>
-          <textarea id="comment_bottom" name="comment_bottom" rows="2" cols="60">Checkmate In Two</textarea>
+          <textarea id="comment_bottom" name="comment_bottom" rows="2" cols="50">Checkmate In Two</textarea>
         </td>
       </tr>
       <tr>
