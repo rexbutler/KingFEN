@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 
-require 'pp' #require 'ap'
-require 'erb'
-#require 'redcloth'
 require 'sinatra'
-require 'sinatra/reloader' if development?
+#require 'sinatra/reloader' if development?
+
+require 'pp'
+require 'erb'
+include ERB::Util
 
 #'K' stands for a white king, "n" for a black knight, etc...
 TRANS_TO_FILENAME = { "-" => "",
@@ -116,15 +117,15 @@ get_or_post '/view' do
   chess_position = parse_fen_string(fen_string)
 
   if chess_position.nil?
-    erb :error_response #inline
+    erb :error_response #inline at bottom of this file
   else    
     @display_info = {}
     @display_info[:piece_image_size] = piece_image_size
     @display_info[:piece_image_set] = piece_image_set
     @display_info[:piece_image_paths] = position_image_paths(chess_position,piece_image_size,piece_image_set)
     
-    @display_info[:comment_top] = h comment_top
-    @display_info[:comment_bottom] = h comment_bottom
+    @display_info[:comment_top] = comment_top
+    @display_info[:comment_bottom] = comment_bottom
      
     erb :view
   end

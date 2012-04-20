@@ -2,8 +2,7 @@
   <script type="text/javascript" src="./javascripts/view.js"></script>
 
   <div id="comment_top">
-    <%= ct = @display_info[:comment_top] %>
-    <!-- <%= RedCloth.new(ct).to_html %> -->
+    <%= ct = h @display_info[:comment_top] %>
   </div>
 
   <% board_size = @display_info[:piece_image_size]*8 %>
@@ -41,8 +40,7 @@
   </div>
 
   <div id="comment_bottom">
-    <%= cb = @display_info[:comment_bottom] %>
-    <!-- <%= RedCloth.new(cb).to_html %> -->
+    <%= cb = h @display_info[:comment_bottom] %>
   </div>
 </div>
 

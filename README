@@ -3,5 +3,5 @@ KingFEN is a Ruby/Sinatra web app to view chess positions described using the FE
 Supports:
   Three piece image sets (Alpha, Merida, and USCF)
   Various piece sizes
-  Embedded comments above and/or below board, with Textile functionality.
+  Embedded comments above and/or below board.
 
