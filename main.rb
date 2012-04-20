@@ -3,7 +3,7 @@ require 'rubygems'
 
 require 'pp' #require 'ap'
 require 'erb'
-require 'redcloth'
+#require 'redcloth'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
